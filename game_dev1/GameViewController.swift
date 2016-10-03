@@ -13,7 +13,7 @@ class GameViewController: UIViewController{
     var skView: SKView = SKView()
     override func viewDidLoad() {
         //print("init GameViewController")
-        navigationController?.interactivePopGestureRecognizer?.enabled = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         
         super.viewDidLoad()
@@ -25,18 +25,18 @@ class GameViewController: UIViewController{
             scene1 = GameScene(fileNamed: "GameScene")!
         }
             /* Set the scale mode to scale to fit the window */
-        scene1!.scaleMode = .Fill
+        scene1!.scaleMode = .fill
             
         skView.presentScene(scene1)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        navigationController?.interactivePopGestureRecognizer?.enabled = false
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.interactivePopGestureRecognizer?.enabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     deinit{
@@ -45,15 +45,15 @@ class GameViewController: UIViewController{
         //print("deinit GameViewController")
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
         } else {
-            return .All
+            return .all
         }
     }
 

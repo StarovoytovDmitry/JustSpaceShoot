@@ -10,8 +10,8 @@ import UIKit
 
 class StoreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    private let selected_text : String = "Selected"
-    private let select_text : String = "Tap to save"
+    fileprivate let selected_text : String = "Selected"
+    fileprivate let select_text : String = "Tap to save"
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageView: UIImageView!
@@ -21,14 +21,14 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var selectView: UIView!
     @IBOutlet weak var selectShutView: UIView!
     
-    @IBAction func selectTap(sender: AnyObject) {
+    @IBAction func selectTap(_ sender: AnyObject) {
         selectedSet()
     }
-    @IBAction func selectButton(sender: AnyObject) {
+    @IBAction func selectButton(_ sender: AnyObject) {
         selectedSet()
     }
     
-    @IBAction func leftShut(sender: AnyObject) {
+    @IBAction func leftShut(_ sender: AnyObject) {
         if (number_shut>0)&&(number_shut<imageShoot.count){
             number_shut -= 1
             imageViewShut.image = imageShoot[number_shut]
@@ -39,7 +39,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedReset()
     }
     
-    @IBAction func rightShut(sender: AnyObject) {
+    @IBAction func rightShut(_ sender: AnyObject) {
         if (number_shut>=0)&&(number_shut<imageShoot.count-1){
             number_shut += 1
             imageViewShut.image = imageShoot[number_shut]
@@ -50,7 +50,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedReset()
     }
     
-    @IBAction func leftImage(sender: AnyObject) {
+    @IBAction func leftImage(_ sender: AnyObject) {
         if (number_player_image>0)&&(number_player_image<playerArray.count){
             number_player_image -= 1
             imageView.image = playerArray[number_player_image]
@@ -61,7 +61,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedReset()
     }
     
-    @IBAction func rightImage(sender: AnyObject) {
+    @IBAction func rightImage(_ sender: AnyObject) {
         if (number_player_image>=0)&&(number_player_image<playerArray.count-1){
             number_player_image += 1
             imageView.image = playerArray[number_player_image]
@@ -72,22 +72,22 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedReset()
     }
     
-    private func selectedSet() {
-        selected.setTitle(selected_text, forState: .Normal)
-        selected.setTitleColor(UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0), forState: .Normal)
+    fileprivate func selectedSet() {
+        selected.setTitle(selected_text, for: UIControlState())
+        selected.setTitleColor(UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0), for: UIControlState())
         selectView.backgroundColor = UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0)
         selectShutView.backgroundColor = UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(number_shut, forKey: "NumberShutImage")
-        defaults.setInteger(number_background, forKey: "BackGameScene")
-        defaults.setInteger(number_player_image, forKey: "NumberPlayerImage")
+        let defaults = UserDefaults.standard
+        defaults.set(number_shut, forKey: "NumberShutImage")
+        defaults.set(number_background, forKey: "BackGameScene")
+        defaults.set(number_player_image, forKey: "NumberPlayerImage")
         defaults.synchronize()
     }
     
-    private func selectedReset() {
-        selected.setTitle(select_text, forState: .Normal)
-        selected.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    fileprivate func selectedReset() {
+        selected.setTitle(select_text, for: UIControlState())
+        selected.setTitleColor(UIColor.white, for: UIControlState())
         selectView.backgroundColor = nil
         selectShutView.backgroundColor = nil
     }
@@ -99,19 +99,19 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         imageViewShut.backgroundColor = imageArray[number_background]
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView?.backgroundColor = imageArray[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        cell.imageView?.backgroundColor = imageArray[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        number_background=indexPath.row
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        number_background=(indexPath as NSIndexPath).row
         imageViewBackground.backgroundColor = imageArray[number_background]
         imageViewShut.backgroundColor = imageArray[number_background]
         selectedReset()
