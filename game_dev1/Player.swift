@@ -14,16 +14,16 @@ class Player: SKSpriteNode {
     
     init(image1: UIImage, player_lives: Int) {
         let texture1 = SKTexture(image: image1)
-        super.init(texture: texture1, color: SKColor.clearColor(), size: CGSizeMake(112, 164))
+        super.init(texture: texture1, color: SKColor.clear, size: CGSize(width: 112, height: 164))
         name = "FireMaker"
         texture = texture1
         zPosition = 2
-        physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
+        physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody?.categoryBitMask = PhysicsCatalog.killer1
         physicsBody?.contactTestBitMask = PhysicsCatalog.boomb1
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
-        physicsBody?.dynamic = false
+        physicsBody?.isDynamic = false
         physicsBody?.allowsRotation = false
         playerlives = player_lives
     }
@@ -36,8 +36,8 @@ class Player: SKSpriteNode {
         return(physicsBody)!
     }
     
-    func Position(scene1: SKScene)->CGPoint {
-        position = CGPointMake(scene1.size.width/2, scene1.size.height/40+30)
+    func Position(_ scene1: SKScene)->CGPoint {
+        position = CGPoint(x: scene1.size.width/2, y: scene1.size.height/40+30)
         return(position)
     }
 }

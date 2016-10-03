@@ -18,21 +18,23 @@ class MenuViewController: UIViewController {
         navigationItem.titleView = label
         
         //background for GameScene
-        let defaults = NSUserDefaults.standardUserDefaults()
-        number_background = defaults.integerForKey("BackGameScene")
-        number_player_image = defaults.integerForKey("NumberPlayerImage")
-        number_shut = defaults.integerForKey("NumberShutImage")
-        score_record = defaults.integerForKey("ScoreRecord")
+        let defaults = UserDefaults.standard
+        number_background = defaults.integer(forKey: "BackGameScene")
+        number_player_image = defaults.integer(forKey: "NumberPlayerImage")
+        number_shut = defaults.integer(forKey: "NumberShutImage")
+        score_record = defaults.integer(forKey: "ScoreRecord")
         recordLabel.text = "Your best : \(score_record)"
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //super.viewDidAppear(animated)
         recordLabel.text = "Your best : \(score_record)"
     }
-    override func viewDidAppear(animated: Bool) {
+    /*
+    override func viewDidAppear(_ animated: Bool) {
         //super.viewDidAppear(animated)
         recordLabel.text = "Your best : \(score_record)"
     }
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -14,16 +14,16 @@ class Plane: SKSpriteNode {
     
     init() {
         let texture1 = SKTexture(imageNamed: "Suttle_3-4")
-        super.init(texture: texture1, color: SKColor.clearColor(), size: CGSizeMake(75, 65))
+        super.init(texture: texture1, color: SKColor.clear, size: CGSize(width: 75, height: 65))
         name = "PlaneR"
         zPosition = 2
         //texture = texture1
-        physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
+        physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody?.categoryBitMask = PhysicsCatalog.plane1
         physicsBody?.contactTestBitMask = PhysicsCatalog.shut1 | PhysicsCatalog.line1 | PhysicsCatalog.area1
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
-        physicsBody?.dynamic = false
+        physicsBody?.isDynamic = false
         physicsBody?.allowsRotation = false
         addSpark()//Медленновато + кушает память
     }
@@ -43,7 +43,7 @@ class Plane: SKSpriteNode {
         return(physicsBody)!
     }
     
-    func Position(scene1: SKScene)->CGPoint {
+    func Position(_ scene1: SKScene)->CGPoint {
         let MinValue = UInt32(0)
         let MaxValue = UInt32(scene1.size.width-100)
         let SpawnPoint = UInt32(MaxValue - MinValue)
@@ -51,7 +51,7 @@ class Plane: SKSpriteNode {
         return(position)
     }
     //Action plane
-    func Action(x: Int) {
+    func Action(_ x: Int) {
         var action = SKAction()
         var duration : Double = Double()
         var dx : Double = 0.05*Double(x)
@@ -64,8 +64,8 @@ class Plane: SKSpriteNode {
             duration = 5.0 - dx
         }
         
-        action = SKAction.moveToY(-100, duration: duration)
+        action = SKAction.moveTo(y: -100, duration: duration)
         let actionDone = SKAction.removeFromParent()
-        runAction(SKAction.sequence([action, actionDone]))
+        run(SKAction.sequence([action, actionDone]))
     }
 }

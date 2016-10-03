@@ -21,19 +21,19 @@ struct PhysicsCatalog {
 
 class PhysicsEffects: SKSpriteNode  {
 
-    private func spaunEffect(position: CGPoint, scene: SKScene, time: Double){
+    fileprivate func spaunEffect(_ position: CGPoint, scene: SKScene, time: Double){
         let effect = SKEmitterNode(fileNamed: effectShoot[number_shut])
         effect!.position = position
         scene.addChild(effect!)
-        scene.runAction(SKAction.waitForDuration(time), completion: { effect!.removeFromParent() })
+        scene.run(SKAction.wait(forDuration: time), completion: { effect!.removeFromParent() })
     }
     
-    private func spaunSoundEffect(scene: SKScene, soundname: String, time: Double) {
-        scene.runAction(SKAction.playSoundFileNamed(soundname, waitForCompletion: false), completion: {SKAction.removeFromParent()})
+    fileprivate func spaunSoundEffect(_ scene: SKScene, soundname: String, time: Double) {
+        scene.run(SKAction.playSoundFileNamed(soundname, waitForCompletion: false), completion: {SKAction.removeFromParent()})
     }
     
     //collision with emmiternode and sound in scene. ScoreF(T/F) - inc Score1 if True
-    func collision(body1: SKSpriteNode?, body2: SKSpriteNode?, effectDuration: Double, scene: SKScene, ScoreF: Bool, Score1: Int)->Int {
+    func collision(_ body1: SKSpriteNode?, body2: SKSpriteNode?, effectDuration: Double, scene: SKScene, ScoreF: Bool, Score1: Int)->Int {
         
         var positionEmitter: CGPoint = CGPoint()
         if body1 == nil {
@@ -50,7 +50,7 @@ class PhysicsEffects: SKSpriteNode  {
         if soundflag == true {
             let action = SKAction.playSoundFileNamed("killPlane.wav", waitForCompletion: false)
             let actionDone = SKAction.removeFromParent()
-            scene.runAction(SKAction.sequence([action, actionDone]))
+            scene.run(SKAction.sequence([action, actionDone]))
         }
         //
         
@@ -63,29 +63,29 @@ class PhysicsEffects: SKSpriteNode  {
         return(LScore)
     }
     //collision. Score1 = Score1 + 1
-    func collision(body1: SKSpriteNode?, body2: SKSpriteNode?, Score1: Int)->Int {
+    func collision(_ body1: SKSpriteNode?, body2: SKSpriteNode?, Score1: Int)->Int {
         body1?.removeFromParent()
         body2?.removeFromParent()
         var LScore = Score1
         LScore += 1
         return(LScore)
     }
-    func collision(body1: SKSpriteNode?, body2: SKSpriteNode?){
+    func collision(_ body1: SKSpriteNode?, body2: SKSpriteNode?){
         body1?.removeFromParent()
         body2?.removeFromParent()
     }
-    func collision(body: SKSpriteNode?){
+    func collision(_ body: SKSpriteNode?){
         body?.removeFromParent()
     }
     //Make joint
-    func Joint(bodyA:SKSpriteNode, bodyB:SKSpriteNode, scene1:SKScene) {
+    func Joint(_ bodyA:SKSpriteNode, bodyB:SKSpriteNode, scene1:SKScene) {
         
-        let AB = SKPhysicsJointPin.jointWithBodyA(bodyA.physicsBody! ,bodyB: bodyB.physicsBody!, anchor: bodyB.position)
-        scene1.physicsWorld.addJoint(AB)
+        let AB = SKPhysicsJointPin.joint(withBodyA: bodyA.physicsBody! ,bodyB: bodyB.physicsBody!, anchor: bodyB.position)
+        scene1.physicsWorld.add(AB)
         
     }
     //Free all joints
-    func freeJoints(scene1:SKScene) {
+    func freeJoints(_ scene1:SKScene) {
         scene1.physicsWorld.removeAllJoints()
     }
 }

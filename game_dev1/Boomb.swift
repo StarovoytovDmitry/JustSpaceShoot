@@ -12,7 +12,7 @@ class Boomb: SKSpriteNode {
     
     init(){
         let texture = SKTexture(imageNamed: "Star-4")
-        super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: SKColor.clear, size: texture.size())
         name = "BoombB"
         zPosition = 1
         physicsBody = SKPhysicsBody(circleOfRadius: self.size.height/2)
@@ -20,7 +20,7 @@ class Boomb: SKSpriteNode {
         physicsBody?.contactTestBitMask = PhysicsCatalog.killer1 | PhysicsCatalog.shut1 | PhysicsCatalog.area1
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = true
-        physicsBody?.dynamic = true
+        physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = true
         
     }
@@ -33,18 +33,18 @@ class Boomb: SKSpriteNode {
         return(physicsBody)!
     }
     
-    func remove(scene:SKScene){
+    func remove(_ scene:SKScene){
         
     }
     
-    func Position(x: CGPoint)->CGPoint{
+    func Position(_ x: CGPoint)->CGPoint{
         position = x
         return(position)
     }
     
     func Action(){
-        let action = SKAction.moveToY(-100, duration: 3.0)
+        let action = SKAction.moveTo(y: -100, duration: 3.0)
         let actionDone = SKAction.removeFromParent()
-        self.runAction(SKAction.sequence([action, actionDone]))
+        self.run(SKAction.sequence([action, actionDone]))
     }
 }

@@ -12,26 +12,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //weak var gameViewController: GameViewController? = GameViewController()
     let player: Player = Player(image1: playerArray[number_player_image]!, player_lives: lives)
-    private let play_area: PlayArea = PlayArea()
-    private let pause: SKSpriteNode = SKSpriteNode(imageNamed: "Pause_button-4")
+    fileprivate let play_area: PlayArea = PlayArea()
+    fileprivate let pause: SKSpriteNode = SKSpriteNode(imageNamed: "Pause_button-4")
     //private let heart: SKSpriteNode = SKSpriteNode(imageNamed: "Heart-4")
-    private let soundOn : SKSpriteNode = SKSpriteNode(imageNamed: "SoundOn")
-    private let soundOff : SKSpriteNode = SKSpriteNode(imageNamed: "SoundOff")
+    fileprivate let soundOn : SKSpriteNode = SKSpriteNode(imageNamed: "SoundOn")
+    fileprivate let soundOff : SKSpriteNode = SKSpriteNode(imageNamed: "SoundOff")
     
-    private let resume: SKLabelNode = SKLabelNode(fontNamed: "standard 07_53")
-    private let restart: SKLabelNode = SKLabelNode(fontNamed: "standard 07_53")
+    fileprivate let resume: SKLabelNode = SKLabelNode(fontNamed: "standard 07_53")
+    fileprivate let restart: SKLabelNode = SKLabelNode(fontNamed: "standard 07_53")
     
-    private var score_Label = UILabel()
-    private var live_Label = UILabel()
-    private var resume_Label = UILabel()
-    private var restart_Label = UILabel()
-    private var menu_Label = UILabel()
+    fileprivate var score_Label = UILabel()
+    fileprivate var live_Label = UILabel()
+    fileprivate var resume_Label = UILabel()
+    fileprivate var restart_Label = UILabel()
+    fileprivate var menu_Label = UILabel()
     
-    var gun = NSTimer()
-    var spaun = NSTimer()
-    var free = NSTimer()
+    var gun = Timer()
+    var spaun = Timer()
+    var free = Timer()
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         //print("init GameScene")
         physicsWorld.contactDelegate = self
         
@@ -52,12 +52,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         SoundButtonOn()
         //
         score = 0
+        //Tolerance of Timers
+        gun.tolerance = 0.06
+        spaun.tolerance = 0.12
+        free.tolerance = 0.5
     }
     
     func Timers() {
-        gun = NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: #selector(Shuter), userInfo: nil, repeats: true)
-        spaun = NSTimer.scheduledTimerWithTimeInterval(1.2, target: self, selector: #selector(Go), userInfo: nil, repeats: true)
-        free = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(freeJoins), userInfo: nil, repeats: true)
+        gun = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(Shuter), userInfo: nil, repeats: true)
+        spaun = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(Go), userInfo: nil, repeats: true)
+        free = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(freeJoins), userInfo: nil, repeats: true)
     }
     //shut of player
     func Shuter(){
@@ -93,7 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    private func randomBool() -> Bool {
+    fileprivate func randomBool() -> Bool {
         return arc4random_uniform(2) == 0 ? true: false
     }
     
@@ -104,13 +108,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
         //Stop timers
-    private func stopTimers(timers: NSTimer...){
+    fileprivate func stopTimers(_ timers: Timer...){
         for i in timers {
             i.invalidate()
         }
     }
     //Fire timers
-    private func fireTimers(timers: NSTimer...){
+    fileprivate func fireTimers(_ timers: Timer...){
         for i in timers {
             i.fire()
         }
@@ -189,19 +193,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(emi2!)
     }
     //Save new record
-    func saveRecord(score: Int) {
+    func saveRecord(_ score: Int) {
         if score > score_record {
             score_record = score
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setInteger(score_record, forKey: "ScoreRecord")
+            let defaults = UserDefaults.standard
+            defaults.set(score_record, forKey: "ScoreRecord")
             defaults.synchronize()
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             if gameinaction == true {
             player.position.x = location.x
             }
@@ -222,12 +226,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //touch
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
         for touch: AnyObject in touches {
             //Вызов паузы
-            let location = touch.locationInNode(self)
-            let node = self.nodeAtPoint(location)
+            let location = touch.location(in: self)
+            let node = self.atPoint(location)
             if (node.name == "PauseButton") {
                 pauseScene()
             }
@@ -246,35 +250,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     func ScoreLabel() {
-        score_Label = UILabel(frame: CGRectMake(100, 2*UIApplication.sharedApplication().statusBarFrame.size.height, 200, 20))
-        score_Label.textAlignment = NSTextAlignment.Left
+        score_Label = UILabel(frame: CGRect(x: 100, y: 2*UIApplication.shared.statusBarFrame.size.height, width: 200, height: 20))
+        score_Label.textAlignment = NSTextAlignment.left
         score_Label.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.0)
-        score_Label.textColor = UIColor.whiteColor()
+        score_Label.textColor = UIColor.white
         score_Label.font = UIFont.init(name: "standard 07_53", size: 14)
         self.view?.addSubview(score_Label)
     }
     func LiveLabel() {
-        live_Label = UILabel(frame: CGRectMake(100, UIApplication.sharedApplication().statusBarFrame.size.height, 100, 20))
-        live_Label.textAlignment = NSTextAlignment.Left
+        live_Label = UILabel(frame: CGRect(x: 100, y: UIApplication.shared.statusBarFrame.size.height, width: 100, height: 20))
+        live_Label.textAlignment = NSTextAlignment.left
         live_Label.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.0)
-        live_Label.textColor = UIColor.whiteColor()
+        live_Label.textColor = UIColor.white
         live_Label.font = UIFont.init(name: "standard 07_53", size: 14)
         self.view?.addSubview(live_Label)
     }
     func PauseButton() {
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        pause.position = CGPointMake(self.size.width-70, self.size.height - 15*statusBarHeight)
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        pause.position = CGPoint(x: self.size.width-70, y: self.size.height - 15*statusBarHeight)
         pause.zPosition = 3
-        pause.size = CGSizeMake(100, 100)
+        pause.size = CGSize(width: 100, height: 100)
         pause.name = "PauseButton"
         self.addChild(pause)
     }
     func SoundButtonOn() {
         soundOff.removeFromParent()
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        soundOn.position = CGPointMake(self.size.width-70, self.size.height - 23*statusBarHeight)
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        soundOn.position = CGPoint(x: self.size.width-70, y: self.size.height - 23*statusBarHeight)
         soundOn.zPosition = 3
-        soundOn.size = CGSizeMake(100, 100)
+        soundOn.size = CGSize(width: 100, height: 100)
         soundOn.name = "SoundButtonOn"
         self.addChild(soundOn)
         soundflag = true
@@ -282,16 +286,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func SoundButtonOff() {
         soundOn.removeFromParent()
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        soundOff.position = CGPointMake(self.size.width-70, self.size.height - 23*statusBarHeight)
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        soundOff.position = CGPoint(x: self.size.width-70, y: self.size.height - 23*statusBarHeight)
         soundOff.zPosition = 3
-        soundOff.size = CGSizeMake(100, 100)
+        soundOff.size = CGSize(width: 100, height: 100)
         soundOff.name = "SoundButtonOff"
         self.addChild(soundOff)
         soundflag = false
     }
     
-    func ResumeButtons(addResume: Bool, addRestart: Bool) {
+    func ResumeButtons(_ addResume: Bool, addRestart: Bool) {
         if addResume == true {
         resume.text = "Resume"
         resume.position = CGPoint(x: self.size.width/2, y: self.size.height/2 + 100)

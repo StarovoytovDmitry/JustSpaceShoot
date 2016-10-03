@@ -10,7 +10,7 @@ import SpriteKit
 
 extension GameScene {
     //BeginContacts
-    func didBeginContact(contact: SKPhysicsContact) {
+    @objc(didBeginContact:) func didBegin(_ contact: SKPhysicsContact) {
         
         let firstBody : SKPhysicsBody// = contact.bodyA
         let secondBody : SKPhysicsBody// = contact.bodyB
@@ -57,7 +57,7 @@ extension GameScene {
         }
     }
     //EndContacts
-    func didEndContact(contact: SKPhysicsContact) {
+    @objc(didEndContact:) func didEnd(_ contact: SKPhysicsContact) {
         let firstBody : SKPhysicsBody// = contact.bodyA
         let secondBody : SKPhysicsBody// = contact.bodyB
         
