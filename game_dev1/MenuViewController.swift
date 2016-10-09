@@ -22,8 +22,9 @@ class MenuViewController: UIViewController {
         number_background = defaults.integer(forKey: "BackGameScene")
         number_player_image = defaults.integer(forKey: "NumberPlayerImage")
         number_shut = defaults.integer(forKey: "NumberShutImage")
-        score_record = defaults.integer(forKey: "ScoreRecord")
-        recordLabel.text = "Your best : \(score_record)"
+        score_record = defaults.integer(forKey: "Record")
+        print("RECORD \(score_record)")
+        //recordLabel.text = "Your best : \(score_record)"
     }
     override func viewWillAppear(_ animated: Bool) {
         //super.viewDidAppear(animated)

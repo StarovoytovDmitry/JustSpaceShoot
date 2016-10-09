@@ -66,10 +66,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //shut of player
     func Shuter(){
         if gameinaction == true {
-        let shut: Shot = Shot(image1: imageShoot[number_shut]!)
-        shut.Position(player.position)
-        shut.Action(self, duration: 1.6)
-        self.addChild(shut)
+            let shut: Shot = Shot(image1: imageShoot[number_shut]!)
+            shut.Position(player.position)
+            shut.Action(self, duration: 1.6)
+            self.addChild(shut)
         }
     }
     //plane with bomb
@@ -194,10 +194,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //Save new record
     func saveRecord(_ score: Int) {
-        if score > score_record {
+        if score >= score_record {
             score_record = score
             let defaults = UserDefaults.standard
-            defaults.set(score_record, forKey: "ScoreRecord")
+            defaults.set(score_record, forKey: "Record")
             defaults.synchronize()
         }
     }
@@ -207,7 +207,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch: AnyObject in touches {
             let location = touch.location(in: self)
             if gameinaction == true {
-            player.position.x = location.x
+                player.position.x = location.x
             }
         }
     }

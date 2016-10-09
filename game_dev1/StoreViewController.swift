@@ -72,6 +72,13 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedReset()
     }
     
+    override func viewDidLoad() {
+        imageView.image = playerArray[number_player_image]
+        imageViewBackground.backgroundColor = imageArray[number_background]
+        imageViewShut.image = imageShoot[number_shut]
+        imageViewShut.backgroundColor = imageArray[number_background]
+    }
+    
     fileprivate func selectedSet() {
         selected.setTitle(selected_text, for: UIControlState())
         selected.setTitleColor(UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0), for: UIControlState())
@@ -91,14 +98,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectView.backgroundColor = nil
         selectShutView.backgroundColor = nil
     }
-    
-    override func viewDidLoad() {
-        imageView.image = playerArray[number_player_image]
-        imageViewBackground.backgroundColor = imageArray[number_background]
-        imageViewShut.image = imageShoot[number_shut]
-        imageViewShut.backgroundColor = imageArray[number_background]
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
