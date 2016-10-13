@@ -42,7 +42,7 @@ class Shot: SKSpriteNode {
         let action = SKAction.moveTo(y: scene1.size.height, duration: duration)
         let actionDone = SKAction.removeFromParent()
         if soundflag == true {
-            scene1.run(SKAction.playSoundFileNamed(soundShoot[number_shut], waitForCompletion: false))//Трабла с памятью??? Сделать как в спаун эффект!!!
+            scene1.run(SKAction.playSoundFileNamed(soundShoot[number_shut], waitForCompletion: false))//Сделать как в спаун эффект!!!
         }
         run(SKAction.sequence([action, actionDone]))
     }

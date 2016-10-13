@@ -32,6 +32,7 @@
 		B7A74FB91D5297ED00EE9358 /* laserShoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7A74FB41D5297ED00EE9358 /* laserShoot.wav */; };
 		B7A74FBA1D5297ED00EE9358 /* nuclearShoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7A74FB51D5297ED00EE9358 /* nuclearShoot.wav */; };
 		B7A74FBB1D5297ED00EE9358 /* nuclearShoot1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7A74FB61D5297ED00EE9358 /* nuclearShoot1.wav */; };
+		B7B1EF331DB0220100E40EC3 /* greenBoomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7B1EF311DB0220100E40EC3 /* greenBoomb.sks */; };
 		B7B20CA31D382AEF00B9F6DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20CA21D382AEF00B9F6DF /* CollectionViewCell.swift */; };
 		B7B20CA51D382F5400B9F6DF /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20CA41D382F5400B9F6DF /* StoreViewController.swift */; };
 		B7B20CA81D392C9200B9F6DF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */; };
@@ -68,6 +69,7 @@
 		B7A74FB41D5297ED00EE9358 /* laserShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserShoot.wav; sourceTree = "<group>"; };
 		B7A74FB51D5297ED00EE9358 /* nuclearShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nuclearShoot.wav; sourceTree = "<group>"; };
 		B7A74FB61D5297ED00EE9358 /* nuclearShoot1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nuclearShoot1.wav; sourceTree = "<group>"; };
+		B7B1EF311DB0220100E40EC3 /* greenBoomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = greenBoomb.sks; sourceTree = "<group>"; };
 		B7B20CA21D382AEF00B9F6DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B7B20CA41D382F5400B9F6DF /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				B75347731D524E7000F3984E /* blueBoomb.sks */,
 				B75347771D52612D00F3984E /* laserBoomb.sks */,
 				B7B6FB421D4241880060024D /* nuclearBoomb.sks */,
+				B7B1EF311DB0220100E40EC3 /* greenBoomb.sks */,
 			);
 			name = Resourses;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				B79510AC1BCEC99000750E52 /* Launch.storyboard in Resources */,
 				B73CF1881D52B063002C08F4 /* laserShoot1.wav in Resources */,
 				B73B64F91BDBAB8900BB8C53 /* Spark1.sks in Resources */,
+				B7B1EF331DB0220100E40EC3 /* greenBoomb.sks in Resources */,
 				B7A74FBA1D5297ED00EE9358 /* nuclearShoot.wav in Resources */,
 				B75347751D524E7000F3984E /* blueBoomb.sks in Resources */,
 				B79510A91BCEC99000750E52 /* Assets.xcassets in Resources */,

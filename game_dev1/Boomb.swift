@@ -22,7 +22,6 @@ class Boomb: SKSpriteNode {
         physicsBody?.affectedByGravity = true
         physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
