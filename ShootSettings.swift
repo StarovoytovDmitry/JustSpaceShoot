@@ -11,11 +11,14 @@ import SpriteKit
 
 let imageShoot = [UIImage(named: "Shut_1"),
                   UIImage(named: "Shut_2"),
-                  UIImage(named: "Shut_3")]
+                  UIImage(named: "Shut_3"),
+                  UIImage(named: "Shut_4")]
 let effectShoot = ["blueBoomb",
                    "laserBoomb",
-                   "nuclearBoomb"]
+                   "nuclearBoomb",
+                   "greenBoomb"]
 let soundShoot = ["blueShoot.wav",
                   "laserShoot1.wav",
-                  "nuclearShoot.wav"]
+                  "nuclearShoot.wav",
+                  "blueShoot.wav"]
 

@@ -15,7 +15,7 @@ var number_background : Int = 0 //Сolor number of the element in the array
 var number_player_image : Int = 0 //Number element of image array
 var number_shut : Int = 0 //Number element of players shut
 var score_record : Int = 0 //Your personal record
-var soundflag : Bool = true 
+var soundflag : Bool = false
 
 var gameinaction : Bool = false
 //var showGameController : Bool = false

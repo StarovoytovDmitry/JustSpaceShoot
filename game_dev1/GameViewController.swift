@@ -26,6 +26,7 @@ class GameViewController: UIViewController{
         }
             /* Set the scale mode to scale to fit the window */
         scene1!.scaleMode = .fill
+        skView.showsPhysics = true
             
         skView.presentScene(scene1)
         

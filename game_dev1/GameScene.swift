@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var free = Timer()
     
     override func didMove(to view: SKView) {
-        //print("init GameScene")
+        
         physicsWorld.contactDelegate = self
         
         gameinaction = true
@@ -49,13 +49,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         PauseButton()
         //
-        SoundButtonOn()
+        SoundButtonOff()
         //
         score = 0
         //Tolerance of Timers
         gun.tolerance = 0.06
-        spaun.tolerance = 0.12
-        free.tolerance = 0.5
+        spaun.tolerance = 1.0
+        free.tolerance = 1.0
     }
     
     func Timers() {
