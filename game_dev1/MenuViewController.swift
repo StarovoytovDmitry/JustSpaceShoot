@@ -9,7 +9,9 @@
 import UIKit
 
 class MenuViewController: UIViewController {
+    
     @IBOutlet weak var recordLabel: UILabel!
+    
     override func viewDidLoad() {
         
         navigationItem.title = "Menu"
@@ -25,8 +27,10 @@ class MenuViewController: UIViewController {
         score_record = defaults.integer(forKey: "Record")
         recordLabel.text = "Your best : \(score_record)"
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         //super.viewDidAppear(animated)
+        self.view.backgroundColor = imageArray[number_background]
         recordLabel.text = "Your best : \(score_record)"
     }
     /*

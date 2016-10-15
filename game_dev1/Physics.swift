@@ -44,7 +44,6 @@ class PhysicsEffects: SKSpriteNode  {
            positionEmitter = (body1?.position)!
         }
         
-        //Трабла с памятью? Сделать как в спаун эффект!!!
         spaunEffect(positionEmitter, scene: scene, time: effectDuration)
         
         if soundflag == true {
@@ -52,7 +51,6 @@ class PhysicsEffects: SKSpriteNode  {
             let actionDone = SKAction.removeFromParent()
             scene.run(SKAction.sequence([action, actionDone]))
         }
-        //
         
         body1?.removeFromParent()
         body2?.removeFromParent()
