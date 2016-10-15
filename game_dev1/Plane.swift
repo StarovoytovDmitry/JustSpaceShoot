@@ -17,7 +17,6 @@ class Plane: SKSpriteNode {
         super.init(texture: texture1, color: SKColor.clear, size: CGSize(width: 75, height: 65))
         name = "PlaneR"
         zPosition = 2
-        //texture = texture1
         physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody?.categoryBitMask = PhysicsCatalog.plane1
         physicsBody?.contactTestBitMask = PhysicsCatalog.shut1 | PhysicsCatalog.line1 | PhysicsCatalog.area1
@@ -25,7 +24,7 @@ class Plane: SKSpriteNode {
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
         physicsBody?.allowsRotation = false
-        addSpark()//Медленновато + кушает память
+        addSpark()//Slow?
     }
 
     required init?(coder aDecoder: NSCoder) {
