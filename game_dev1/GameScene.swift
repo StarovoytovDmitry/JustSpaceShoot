@@ -321,6 +321,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stopTimers(gun, spaun, free)
         removeAllActions()
         removeAllChildren()
-        //print("deinit GameScene")
     }
 }

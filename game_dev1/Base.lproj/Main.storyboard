@@ -67,8 +67,8 @@
                                     <constraint firstAttribute="width" constant="55" id="0nD-kA-fQH"/>
                                     <constraint firstAttribute="height" constant="55" id="ceX-J8-csK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Standard0753" family="standard 07_53" pointSize="15"/>
-                                <state key="normal" title="store" backgroundImage="Earth-4">
+                                <fontDescription key="fontDescription" name="Standard0753" family="standard 07_53" pointSize="10"/>
+                                <state key="normal" title="Custom" backgroundImage="Earth-4">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -105,7 +105,7 @@
                                     <constraint firstAttribute="height" constant="103" id="gDz-O2-NCv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Standard0753" family="standard 07_53" pointSize="18"/>
-                                <state key="normal" title=" start" backgroundImage="Comet_1-4">
+                                <state key="normal" title="Play" backgroundImage="Comet_1-4">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
