@@ -29,7 +29,7 @@
 		<string>standard 07_53.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>Launch</string>
+	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

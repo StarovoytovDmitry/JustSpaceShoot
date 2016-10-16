@@ -19,27 +19,26 @@ class MenuViewController: UIViewController {
         label.font = UIFont(name: "standard 07_53", size: 19)
         navigationItem.titleView = label
         
-        //background for GameScene
+        //set settings values
         let defaults = UserDefaults.standard
         number_background = defaults.integer(forKey: "BackGameScene")
         number_player_image = defaults.integer(forKey: "NumberPlayerImage")
         number_shut = defaults.integer(forKey: "NumberShutImage")
         score_record = defaults.integer(forKey: "Record")
         recordLabel.text = "Your best : \(score_record)"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //super.viewDidAppear(animated)
+        
         self.view.backgroundColor = imageArray[number_background]
         recordLabel.text = "Your best : \(score_record)"
+        
     }
-    /*
-    override func viewDidAppear(_ animated: Bool) {
-        //super.viewDidAppear(animated)
-        recordLabel.text = "Your best : \(score_record)"
-    }
-    */
+    
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
 }

@@ -19,10 +19,10 @@ class Plane: SKSpriteNode {
         zPosition = 2
         physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody?.categoryBitMask = PhysicsCatalog.plane1
-        physicsBody?.contactTestBitMask = PhysicsCatalog.shut1 | PhysicsCatalog.line1 | PhysicsCatalog.area1
+        physicsBody?.contactTestBitMask = PhysicsCatalog.shut1 | PhysicsCatalog.line1 | PhysicsCatalog.area1 | PhysicsCatalog.killer1
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
+        physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = false
         addSpark()//Slow?
     }

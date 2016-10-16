@@ -32,7 +32,7 @@ extension GameScene {
         if ((firstBody.categoryBitMask == PhysicsCatalog.plane1) && (secondBody.categoryBitMask == PhysicsCatalog.shut1) ||
             (firstBody.categoryBitMask == PhysicsCatalog.shut1) && (secondBody.categoryBitMask == PhysicsCatalog.plane1)||(firstBody.categoryBitMask == PhysicsCatalog.boomb1) && (secondBody.categoryBitMask == PhysicsCatalog.shut1) ||
             (firstBody.categoryBitMask == PhysicsCatalog.shut1) && (secondBody.categoryBitMask == PhysicsCatalog.boomb1)){
-            score=physics1.collision(firstBody.node as? SKSpriteNode , body2: secondBody.node as? SKSpriteNode, effectDuration: 0.3, scene: self, ScoreF: true, Score1: score)
+            score = physics1.collision(firstBody.node as? SKSpriteNode , body2: secondBody.node as? SKSpriteNode, effectDuration: 0.3, scene: self, ScoreF: true, Score1: score)
         }
         //collision boomb with player
         if (firstBody.categoryBitMask == PhysicsCatalog.killer1) && (secondBody.categoryBitMask == PhysicsCatalog.boomb1){
@@ -46,6 +46,15 @@ extension GameScene {
         if (firstBody.categoryBitMask == PhysicsCatalog.boomb1) && (secondBody.categoryBitMask == PhysicsCatalog.killer1){
             player.playerlives -= 1
             physics1.collision(firstBody.node as? SKSpriteNode)
+            if player.playerlives <= 0 {
+                stopScene()
+                ResumeButtons(false, addRestart: true)
+            }
+        }
+        //collision player with palne
+        if (firstBody.categoryBitMask == PhysicsCatalog.killer1) && (secondBody.categoryBitMask == PhysicsCatalog.plane1)||(firstBody.categoryBitMask == PhysicsCatalog.plane1) && (secondBody.categoryBitMask == PhysicsCatalog.killer1){
+            player.playerlives = 0
+            score = physics1.collision(firstBody.node as? SKSpriteNode , body2: secondBody.node as? SKSpriteNode, Score1: score)
             if player.playerlives <= 0 {
                 stopScene()
                 ResumeButtons(false, addRestart: true)

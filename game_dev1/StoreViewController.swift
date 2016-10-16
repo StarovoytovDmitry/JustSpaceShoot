@@ -24,6 +24,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func selectTap(_ sender: AnyObject) {
         selectedSet()
     }
+    
     @IBAction func selectButton(_ sender: AnyObject) {
         selectedSet()
     }
