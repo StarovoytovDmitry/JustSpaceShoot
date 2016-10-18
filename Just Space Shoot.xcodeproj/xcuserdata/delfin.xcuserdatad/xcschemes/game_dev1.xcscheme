@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B79510991BCEC99000750E52"
                BuildableName = "Space Shoot.app"
-               BlueprintName = "Space Shoot"
-               ReferencedContainer = "container:Space Shoot.xcodeproj">
+               BlueprintName = "Just Space Shoot"
+               ReferencedContainer = "container:Just Space Shoot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "B79510B11BCEC99000750E52"
                BuildableName = "Space Shoot.xctest"
                BlueprintName = "Space ShootTests"
-               ReferencedContainer = "container:Space Shoot.xcodeproj">
+               ReferencedContainer = "container:Just Space Shoot.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "B79510BC1BCEC99000750E52"
                BuildableName = "Space Shoot.xctest"
                BlueprintName = "Space ShootUITests"
-               ReferencedContainer = "container:Space Shoot.xcodeproj">
+               ReferencedContainer = "container:Just Space Shoot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,8 +54,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B79510991BCEC99000750E52"
             BuildableName = "Space Shoot.app"
-            BlueprintName = "Space Shoot"
-            ReferencedContainer = "container:Space Shoot.xcodeproj">
+            BlueprintName = "Just Space Shoot"
+            ReferencedContainer = "container:Just Space Shoot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B79510991BCEC99000750E52"
             BuildableName = "Space Shoot.app"
-            BlueprintName = "Space Shoot"
-            ReferencedContainer = "container:Space Shoot.xcodeproj">
+            BlueprintName = "Just Space Shoot"
+            ReferencedContainer = "container:Just Space Shoot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,8 +96,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B79510991BCEC99000750E52"
             BuildableName = "Space Shoot.app"
-            BlueprintName = "Space Shoot"
-            ReferencedContainer = "container:Space Shoot.xcodeproj">
+            BlueprintName = "Just Space Shoot"
+            ReferencedContainer = "container:Just Space Shoot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

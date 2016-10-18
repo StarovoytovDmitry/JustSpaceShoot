@@ -7,7 +7,21 @@
 //
 import SpriteKit
 import UIKit
+import CoreMotion
 
+/*
+struct CMAcceleration {
+    var x: Double
+    var y: Double
+    var z: Double
+    //init()
+    init(x: Double, y: Double, z: Double){
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+}
+*/
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //weak var gameViewController: GameViewController? = GameViewController()
@@ -30,6 +44,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gun = Timer()
     var spaun = Timer()
     var free = Timer()
+    
+    var motionManager = CMMotionManager()
+    var destX : CGFloat  = 0.0
     
     override func didMove(to view: SKView) {
         
@@ -56,14 +73,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gun.tolerance = 0.06
         spaun.tolerance = 1.0
         free.tolerance = 1.0
+        
+        motionManager.startAccelerometerUpdates()
     }
+    // Accelerometer
+    func processUserMotion(forUpdate currentTime: CFTimeInterval) {
+        //if let ship = player as? SKSpriteNode {
+            if let data = motionManager.accelerometerData {
+                if fabs(data.acceleration.x) > 0.2 {
+                    // 4 How do you move the ship?
+                    print("Acceleration: \(data.acceleration.x)")
+                    player.physicsBody!.applyForce(CGVector(dx: 100 * CGFloat(data.acceleration.x), dy: 0))
+                }
+            }
+        //}
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        processUserMotion(forUpdate: currentTime)
+    }
+    
     
     func Timers() {
         gun = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(Shuter), userInfo: nil, repeats: true)
         spaun = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(Go), userInfo: nil, repeats: true)
         free = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(freeJoins), userInfo: nil, repeats: true)
     }
-    //shut of player
+    // Shut of player
     func Shuter(){
         if gameinaction == true {
             let shut: Shot = Shot(image1: imageShoot[number_shut]!)
@@ -72,7 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(shut)
         }
     }
-    //plane with bomb
+    // Plane with bomb
     func Go(){
         if gameinaction == true {
             let planeR: Plane = Plane()
@@ -90,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             planeR.Action(score)
         }
     }
-    //free all joints
+    // Free all joints
     func freeJoins() {
         if gameinaction == true {
             physics1.freeJoints(self)
@@ -201,7 +237,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             defaults.synchronize()
         }
     }
-    
+    /*
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch: AnyObject in touches {
@@ -210,8 +246,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = location.x
             }
         }
+        
     }
-    
+    */
     func SceneSetting() {
         
         self.backgroundColor = imageArray[number_background]
