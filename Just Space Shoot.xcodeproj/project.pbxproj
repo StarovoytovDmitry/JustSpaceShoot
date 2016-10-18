@@ -54,7 +54,7 @@
 		B788C2901D3F95380062EEFF /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
 		B78C7C4C1C05996D00461288 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = game_dev1/Player.swift; sourceTree = "<group>"; };
 		B78C7C4E1C05E7AC00461288 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shot.swift; path = game_dev1/Shot.swift; sourceTree = "<group>"; };
-		B795109A1BCEC99000750E52 /* Space Shoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Shoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B795109A1BCEC99000750E52 /* Just Space Shoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Space Shoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B795109D1BCEC99000750E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B795109F1BCEC99000750E52 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = game_dev1/GameScene.sks; sourceTree = "<group>"; };
 		B79510A11BCEC99000750E52 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		B795109B1BCEC99000750E52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B795109A1BCEC99000750E52 /* Space Shoot.app */,
+				B795109A1BCEC99000750E52 /* Just Space Shoot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B79510991BCEC99000750E52 /* Space Shoot */ = {
+		B79510991BCEC99000750E52 /* Just Space Shoot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Space Shoot" */;
+			buildConfigurationList = B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Just Space Shoot" */;
 			buildPhases = (
 				B79510961BCEC99000750E52 /* Sources */,
 				B79510971BCEC99000750E52 /* Frameworks */,
@@ -204,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = "Space Shoot";
+			name = "Just Space Shoot";
 			productName = game_dev1;
-			productReference = B795109A1BCEC99000750E52 /* Space Shoot.app */;
+			productReference = B795109A1BCEC99000750E52 /* Just Space Shoot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Space Shoot" */;
+			buildConfigurationList = B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Just Space Shoot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -238,7 +238,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B79510991BCEC99000750E52 /* Space Shoot */,
+				B79510991BCEC99000750E52 /* Just Space Shoot */,
 			);
 		};
 /* End PBXProject section */
@@ -414,7 +414,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delfin.find.SpaceShoot;
-				PRODUCT_NAME = "Space Shoot";
+				PRODUCT_NAME = "Just Space Shoot";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -429,7 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delfin.find.SpaceShoot;
-				PRODUCT_NAME = "Space Shoot";
+				PRODUCT_NAME = "Just Space Shoot";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -438,7 +438,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Space Shoot" */ = {
+		B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Just Space Shoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B79510C41BCEC99000750E52 /* Debug */,
@@ -447,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Space Shoot" */ = {
+		B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Just Space Shoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B79510C71BCEC99000750E52 /* Debug */,

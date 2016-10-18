@@ -23,8 +23,9 @@ class Player: SKSpriteNode {
         physicsBody?.contactTestBitMask = PhysicsCatalog.boomb1 | PhysicsCatalog.plane1
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
+        physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = false
+        physicsBody?.mass = 0.02
         playerlives = player_lives
     }
     
