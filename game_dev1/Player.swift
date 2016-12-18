@@ -20,8 +20,8 @@ class Player: SKSpriteNode {
         zPosition = 2
         physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody?.categoryBitMask = PhysicsCatalog.killer1
-        physicsBody?.contactTestBitMask = PhysicsCatalog.boomb1 | PhysicsCatalog.plane1
-        physicsBody?.collisionBitMask = 0
+        physicsBody?.contactTestBitMask = PhysicsCatalog.killer1 | PhysicsCatalog.boomb1 | PhysicsCatalog.plane1
+        physicsBody?.collisionBitMask = PhysicsCatalog.killer1 | PhysicsCatalog.limiter1
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = false
