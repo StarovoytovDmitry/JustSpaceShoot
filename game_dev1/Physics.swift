@@ -17,6 +17,7 @@ struct PhysicsCatalog {
     static let killer1 : UInt32 = 0x03
     static let line1 : UInt32 = 0x04
     static let area1 : UInt32 = 0x05
+    static let limiter1 : UInt32 = 0x06
 }
 
 class PhysicsEffects: SKSpriteNode  {

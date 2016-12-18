@@ -11,7 +11,7 @@ import SpriteKit
 class PlayArea: SKSpriteNode {
     
     init(){
-        let texture = SKTexture(imageNamed: "Shut_1")
+        let texture = SKTexture(imageNamed: "Shut_0")
         super.init(texture: texture, color: SKColor.clear, size: texture.size())
         alpha = CGFloat(0.0)
     }

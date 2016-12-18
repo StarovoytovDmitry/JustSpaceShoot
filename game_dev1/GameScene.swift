@@ -27,6 +27,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //weak var gameViewController: GameViewController? = GameViewController()
     let player: Player = Player(image1: playerArray[number_player_image]!, player_lives: lives)
     fileprivate let play_area: PlayArea = PlayArea()
+    fileprivate let limiter_area1: Limiter = Limiter()
+    fileprivate let limiter_area2: Limiter = Limiter()
     fileprivate let pause: SKSpriteNode = SKSpriteNode(imageNamed: "Pause_button-4")
     //private let heart: SKSpriteNode = SKSpriteNode(imageNamed: "Heart-4")
     fileprivate let soundOn : SKSpriteNode = SKSpriteNode(imageNamed: "SoundOn")
@@ -64,6 +66,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         play_area.Position(self)
         addChild(play_area)
         
+        Limiters()
+        //
         PauseButton()
         //
         SoundButtonOff()
@@ -99,6 +103,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         spaun = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(Go), userInfo: nil, repeats: true)
         free = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(freeJoins), userInfo: nil, repeats: true)
     }
+    //Limiters of area
+    func Limiters(){
+        limiter_area1.Position(is_left: true, self)
+        addChild(limiter_area1)
+        
+        limiter_area2.Position(is_left: false, self)
+        addChild(limiter_area2)
+    }
+
     // Shut of player
     func Shuter(){
         if gameinaction == true {
@@ -214,6 +227,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(player)
         addChild(play_area)
+        Limiters()
         if soundflag == false {
             SoundButtonOff()
         } else {
