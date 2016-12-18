@@ -10,14 +10,13 @@ import SpriteKit
 import UIKit
 
 struct PhysicsCatalog {
-    
-    static let plane1 : UInt32 = 0x00
-    static let shut1 : UInt32 = 0x01
-    static let boomb1 : UInt32 = 0x02
-    static let killer1 : UInt32 = 0x03
-    static let line1 : UInt32 = 0x04
-    static let area1 : UInt32 = 0x05
-    static let limiter1 : UInt32 = 0x06
+    static let plane1 : UInt32 = 0x1 << 0
+    static let shut1 : UInt32 = 0x1 << 1
+    static let boomb1 : UInt32 = 0x1 << 2
+    static let killer1 : UInt32 = 0x1 << 3
+    static let line1 : UInt32 = 0x1 << 4
+    static let area1 : UInt32 = 0x1 << 5
+    static let limiter1 : UInt32 = 0x1 << 6
 }
 
 class PhysicsEffects: SKSpriteNode  {

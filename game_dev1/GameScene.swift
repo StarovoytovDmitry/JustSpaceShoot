@@ -84,7 +84,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func processUserMotion(forUpdate currentTime: CFTimeInterval) {
         //if let ship = player as? SKSpriteNode {
             if let data = motionManager.accelerometerData {
-                if fabs(data.acceleration.x) > 0.2 {
+                if fabs(data.acceleration.x) > 0.1 {
                     // 4 How do you move the ship?
                     print("Acceleration: \(data.acceleration.x)")
                     player.physicsBody!.applyForce(CGVector(dx: 100 * CGFloat(data.acceleration.x), dy: 0))
@@ -156,7 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score_Label.text = ("Score: \(score)")
     }
     
-        //Stop timers
+    //Stop timers
     fileprivate func stopTimers(_ timers: Timer...){
         for i in timers {
             i.invalidate()
@@ -226,6 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Timers()
         
         addChild(player)
+        player.Position(self)
         addChild(play_area)
         Limiters()
         if soundflag == false {
