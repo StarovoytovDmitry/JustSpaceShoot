@@ -38,6 +38,7 @@
 		B7B20CA81D392C9200B9F6DF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */; };
 		B7B6FB441D4241880060024D /* nuclearBoomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7B6FB421D4241880060024D /* nuclearBoomb.sks */; };
 		B7EB1EB71BFE648400EED69E /* Boomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB1EB61BFE648400EED69E /* Boomb.swift */; };
+		B7EBA4441E06CAF400200838 /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EBA4431E06CAF400200838 /* Limiter.swift */; };
 		B7ED3EEC1D3D94B600B76F6B /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED3EEB1D3D94B600B76F6B /* GlobalVar.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		B7B6FB411D422FB50060024D /* standard 07_53.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "standard 07_53.ttf"; sourceTree = "<group>"; };
 		B7B6FB421D4241880060024D /* nuclearBoomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = nuclearBoomb.sks; sourceTree = "<group>"; };
 		B7EB1EB61BFE648400EED69E /* Boomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Boomb.swift; path = game_dev1/Boomb.swift; sourceTree = "<group>"; };
+		B7EBA4431E06CAF400200838 /* Limiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Limiter.swift; path = game_dev1/Limiter.swift; sourceTree = "<group>"; };
 		B7ED3EEB1D3D94B600B76F6B /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				B7A106E81BE8DBCE00D13C09 /* Plane.swift */,
 				B78C7C4C1C05996D00461288 /* Player.swift */,
 				B788C2901D3F95380062EEFF /* PlayArea.swift */,
+				B7EBA4431E06CAF400200838 /* Limiter.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				B78C7C4D1C05996D00461288 /* Player.swift in Sources */,
 				B7B20CA81D392C9200B9F6DF /* MenuViewController.swift in Sources */,
 				B72D65761C08753400BC2606 /* Singleton.swift in Sources */,
+				B7EBA4441E06CAF400200838 /* Limiter.swift in Sources */,
 				B71780FA1D54E0790045851B /* GameScenePhysics.swift in Sources */,
 				B795109E1BCEC99000750E52 /* AppDelegate.swift in Sources */,
 				B78C7C4F1C05E7AC00461288 /* Shot.swift in Sources */,
