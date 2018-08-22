@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0461B72B212D68C2000B8302 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461B729212D68C2000B8302 /* Launch.storyboard */; };
+		0461B72D212D693C000B8302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461B72C212D693C000B8302 /* Main.storyboard */; };
 		B70B364D1D340EC300DE6B59 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70B364C1D340EC300DE6B59 /* Physics.swift */; };
 		B71780FA1D54E0790045851B /* GameScenePhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71780F91D54E0790045851B /* GameScenePhysics.swift */; };
 		B71A3E521BDAC774007E3F17 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B71A3E501BDAC774007E3F17 /* MyParticle.sks */; };
@@ -23,9 +25,7 @@
 		B79510A01BCEC99000750E52 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B795109F1BCEC99000750E52 /* GameScene.sks */; };
 		B79510A21BCEC99000750E52 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79510A11BCEC99000750E52 /* GameScene.swift */; };
 		B79510A41BCEC99000750E52 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79510A31BCEC99000750E52 /* GameViewController.swift */; };
-		B79510A71BCEC99000750E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79510A51BCEC99000750E52 /* Main.storyboard */; };
 		B79510A91BCEC99000750E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79510A81BCEC99000750E52 /* Assets.xcassets */; };
-		B79510AC1BCEC99000750E52 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79510AA1BCEC99000750E52 /* Launch.storyboard */; };
 		B7A106E91BE8DBCE00D13C09 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A106E81BE8DBCE00D13C09 /* Plane.swift */; };
 		B7A74FB71D5297ED00EE9358 /* blueShoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7A74FB21D5297ED00EE9358 /* blueShoot.wav */; };
 		B7A74FB81D5297ED00EE9358 /* killPlane.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7A74FB31D5297ED00EE9358 /* killPlane.wav */; };
@@ -43,28 +43,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0461B72A212D68C2000B8302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
+		0461B72C212D693C000B8302 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B70B364C1D340EC300DE6B59 /* Physics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		B71780F91D54E0790045851B /* GameScenePhysics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScenePhysics.swift; sourceTree = "<group>"; };
-		B71A3E501BDAC774007E3F17 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyParticle.sks; path = game_dev1/MyParticle.sks; sourceTree = "<group>"; };
-		B72D65751C08753400BC2606 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = game_dev1/Singleton.swift; sourceTree = "<group>"; };
-		B73B64F81BDBAB8900BB8C53 /* Spark1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Spark1.sks; path = game_dev1/Spark1.sks; sourceTree = "<group>"; };
+		B71A3E501BDAC774007E3F17 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		B72D65751C08753400BC2606 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		B73B64F81BDBAB8900BB8C53 /* Spark1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark1.sks; sourceTree = "<group>"; };
 		B73CF1871D52B063002C08F4 /* laserShoot1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserShoot1.wav; sourceTree = "<group>"; };
 		B73CF1891D52B2C7002C08F4 /* ShootSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootSettings.swift; sourceTree = "<group>"; };
 		B75347731D524E7000F3984E /* blueBoomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blueBoomb.sks; sourceTree = "<group>"; };
 		B75347771D52612D00F3984E /* laserBoomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = laserBoomb.sks; sourceTree = "<group>"; };
 		B788C2901D3F95380062EEFF /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
-		B78C7C4C1C05996D00461288 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = game_dev1/Player.swift; sourceTree = "<group>"; };
-		B78C7C4E1C05E7AC00461288 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shot.swift; path = game_dev1/Shot.swift; sourceTree = "<group>"; };
-		B795109A1BCEC99000750E52 /* Just Space Shoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Space Shoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78C7C4C1C05996D00461288 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B78C7C4E1C05E7AC00461288 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
+		B795109A1BCEC99000750E52 /* JustSpaceShoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustSpaceShoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B795109D1BCEC99000750E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B795109F1BCEC99000750E52 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = game_dev1/GameScene.sks; sourceTree = "<group>"; };
+		B795109F1BCEC99000750E52 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B79510A11BCEC99000750E52 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B79510A31BCEC99000750E52 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B79510A61BCEC99000750E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B79510A81BCEC99000750E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = game_dev1/Assets.xcassets; sourceTree = "<group>"; };
-		B79510AB1BCEC99000750E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
-		B79510AD1BCEC99000750E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = game_dev1/Info.plist; sourceTree = "<group>"; };
-		B7A106E81BE8DBCE00D13C09 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = game_dev1/Plane.swift; sourceTree = "<group>"; };
+		B79510A81BCEC99000750E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B79510AD1BCEC99000750E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7A106E81BE8DBCE00D13C09 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B7A74FB21D5297ED00EE9358 /* blueShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blueShoot.wav; sourceTree = "<group>"; };
 		B7A74FB31D5297ED00EE9358 /* killPlane.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = killPlane.wav; sourceTree = "<group>"; };
 		B7A74FB41D5297ED00EE9358 /* laserShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserShoot.wav; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B7B6FB411D422FB50060024D /* standard 07_53.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "standard 07_53.ttf"; sourceTree = "<group>"; };
 		B7B6FB421D4241880060024D /* nuclearBoomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = nuclearBoomb.sks; sourceTree = "<group>"; };
-		B7EB1EB61BFE648400EED69E /* Boomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Boomb.swift; path = game_dev1/Boomb.swift; sourceTree = "<group>"; };
-		B7EBA4431E06CAF400200838 /* Limiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Limiter.swift; path = game_dev1/Limiter.swift; sourceTree = "<group>"; };
+		B7EB1EB61BFE648400EED69E /* Boomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boomb.swift; sourceTree = "<group>"; };
+		B7EBA4431E06CAF400200838 /* Limiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
 		B7ED3EEB1D3D94B600B76F6B /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,16 +92,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B70B364B1D340E7900DE6B59 /* Physics */ = {
+		0461B718212D6587000B8302 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				0461B729212D68C2000B8302 /* Launch.storyboard */,
+				B7B6FB411D422FB50060024D /* standard 07_53.ttf */,
+				B79510AD1BCEC99000750E52 /* Info.plist */,
+				B79510A81BCEC99000750E52 /* Assets.xcassets */,
+				B795109F1BCEC99000750E52 /* GameScene.sks */,
+				0461B719212D65B8000B8302 /* Sounds */,
+				0461B71A212D65CD000B8302 /* Textures */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		0461B719212D65B8000B8302 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B7A74FB31D5297ED00EE9358 /* killPlane.wav */,
+				B7A74FB21D5297ED00EE9358 /* blueShoot.wav */,
+				B7A74FB41D5297ED00EE9358 /* laserShoot.wav */,
+				B73CF1871D52B063002C08F4 /* laserShoot1.wav */,
+				B7A74FB51D5297ED00EE9358 /* nuclearShoot.wav */,
+				B7A74FB61D5297ED00EE9358 /* nuclearShoot1.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		0461B71A212D65CD000B8302 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				B71A3E501BDAC774007E3F17 /* MyParticle.sks */,
+				B73B64F81BDBAB8900BB8C53 /* Spark1.sks */,
+				B75347731D524E7000F3984E /* blueBoomb.sks */,
+				B75347771D52612D00F3984E /* laserBoomb.sks */,
+				B7B6FB421D4241880060024D /* nuclearBoomb.sks */,
+				B7B1EF311DB0220100E40EC3 /* greenBoomb.sks */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		0461B71B212D6624000B8302 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B795109D1BCEC99000750E52 /* AppDelegate.swift */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		0461B71C212D668A000B8302 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B73CF1891D52B2C7002C08F4 /* ShootSettings.swift */,
+				B7ED3EEB1D3D94B600B76F6B /* GlobalVar.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0461B71D212D66B1000B8302 /* GameCoreLayer */ = {
 			isa = PBXGroup;
 			children = (
 				B70B364C1D340EC300DE6B59 /* Physics.swift */,
+				B79510A11BCEC99000750E52 /* GameScene.swift */,
+				B71780F91D54E0790045851B /* GameScenePhysics.swift */,
+				0461B71F212D67B4000B8302 /* Nodes */,
 			);
-			name = Physics;
-			path = game_dev1;
+			path = GameCoreLayer;
 			sourceTree = "<group>";
 		};
-		B74ACC601CF8E57300FCDF61 /* Objects */ = {
+		0461B71E212D66DE000B8302 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0461B72C212D693C000B8302 /* Main.storyboard */,
+				B72D65751C08753400BC2606 /* Singleton.swift */,
+				B79510A31BCEC99000750E52 /* GameViewController.swift */,
+				B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */,
+				B7B20CA41D382F5400B9F6DF /* StoreViewController.swift */,
+				B7B20CA21D382AEF00B9F6DF /* CollectionViewCell.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		0461B71F212D67B4000B8302 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
 				B78C7C4E1C05E7AC00461288 /* Shot.swift */,
@@ -111,53 +183,17 @@
 				B788C2901D3F95380062EEFF /* PlayArea.swift */,
 				B7EBA4431E06CAF400200838 /* Limiter.swift */,
 			);
-			name = Objects;
-			sourceTree = "<group>";
-		};
-		B74ACC611CF8EA0800FCDF61 /* Resourses */ = {
-			isa = PBXGroup;
-			children = (
-				B79510A81BCEC99000750E52 /* Assets.xcassets */,
-				B7A74FB31D5297ED00EE9358 /* killPlane.wav */,
-				B7A74FB21D5297ED00EE9358 /* blueShoot.wav */,
-				B7A74FB41D5297ED00EE9358 /* laserShoot.wav */,
-				B73CF1871D52B063002C08F4 /* laserShoot1.wav */,
-				B7A74FB51D5297ED00EE9358 /* nuclearShoot.wav */,
-				B7A74FB61D5297ED00EE9358 /* nuclearShoot1.wav */,
-				B795109F1BCEC99000750E52 /* GameScene.sks */,
-				B71A3E501BDAC774007E3F17 /* MyParticle.sks */,
-				B73B64F81BDBAB8900BB8C53 /* Spark1.sks */,
-				B75347731D524E7000F3984E /* blueBoomb.sks */,
-				B75347771D52612D00F3984E /* laserBoomb.sks */,
-				B7B6FB421D4241880060024D /* nuclearBoomb.sks */,
-				B7B1EF311DB0220100E40EC3 /* greenBoomb.sks */,
-			);
-			name = Resourses;
-			sourceTree = "<group>";
-		};
-		B74ACC621CF8EA4F00FCDF61 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				B79510A51BCEC99000750E52 /* Main.storyboard */,
-				B79510AA1BCEC99000750E52 /* Launch.storyboard */,
-				B79510AD1BCEC99000750E52 /* Info.plist */,
-			);
-			name = Storyboards;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 		B79510911BCEC99000750E52 = {
 			isa = PBXGroup;
 			children = (
-				B7B6FB411D422FB50060024D /* standard 07_53.ttf */,
-				B72D65751C08753400BC2606 /* Singleton.swift */,
-				B73CF1891D52B2C7002C08F4 /* ShootSettings.swift */,
-				B7ED3EEB1D3D94B600B76F6B /* GlobalVar.swift */,
-				B74ACC621CF8EA4F00FCDF61 /* Storyboards */,
-				B74ACC601CF8E57300FCDF61 /* Objects */,
-				B70B364B1D340E7900DE6B59 /* Physics */,
-				B74ACC611CF8EA0800FCDF61 /* Resourses */,
-				B7B20CA61D383AE300B9F6DF /* ViewControllers */,
-				B795109C1BCEC99000750E52 /* game_dev1 */,
+				0461B71E212D66DE000B8302 /* PresentationLayer */,
+				0461B71B212D6624000B8302 /* ApplicationLayer */,
+				0461B71D212D66B1000B8302 /* GameCoreLayer */,
+				0461B71C212D668A000B8302 /* Constants */,
+				0461B718212D6587000B8302 /* Resourses */,
 				B795109B1BCEC99000750E52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,39 +201,17 @@
 		B795109B1BCEC99000750E52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B795109A1BCEC99000750E52 /* Just Space Shoot.app */,
+				B795109A1BCEC99000750E52 /* JustSpaceShoot.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B795109C1BCEC99000750E52 /* game_dev1 */ = {
-			isa = PBXGroup;
-			children = (
-				B795109D1BCEC99000750E52 /* AppDelegate.swift */,
-				B79510A11BCEC99000750E52 /* GameScene.swift */,
-				B71780F91D54E0790045851B /* GameScenePhysics.swift */,
-			);
-			path = game_dev1;
-			sourceTree = "<group>";
-		};
-		B7B20CA61D383AE300B9F6DF /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				B79510A31BCEC99000750E52 /* GameViewController.swift */,
-				B7B20CA71D392C9200B9F6DF /* MenuViewController.swift */,
-				B7B20CA41D382F5400B9F6DF /* StoreViewController.swift */,
-				B7B20CA21D382AEF00B9F6DF /* CollectionViewCell.swift */,
-			);
-			name = ViewControllers;
-			path = game_dev1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B79510991BCEC99000750E52 /* Just Space Shoot */ = {
+		B79510991BCEC99000750E52 /* JustSpaceShoot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Just Space Shoot" */;
+			buildConfigurationList = B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "JustSpaceShoot" */;
 			buildPhases = (
 				B79510961BCEC99000750E52 /* Sources */,
 				B79510971BCEC99000750E52 /* Frameworks */,
@@ -207,9 +221,9 @@
 			);
 			dependencies = (
 			);
-			name = "Just Space Shoot";
+			name = JustSpaceShoot;
 			productName = game_dev1;
-			productReference = B795109A1BCEC99000750E52 /* Just Space Shoot.app */;
+			productReference = B795109A1BCEC99000750E52 /* JustSpaceShoot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,17 +232,17 @@
 		B79510921BCEC99000750E52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Дмитрий";
 				TargetAttributes = {
 					B79510991BCEC99000750E52 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = MPGRZ3JK28;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
-			buildConfigurationList = B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Just Space Shoot" */;
+			buildConfigurationList = B79510951BCEC99000750E52 /* Build configuration list for PBXProject "JustSpaceShoot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,7 +255,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B79510991BCEC99000750E52 /* Just Space Shoot */,
+				B79510991BCEC99000750E52 /* JustSpaceShoot */,
 			);
 		};
 /* End PBXProject section */
@@ -254,16 +268,16 @@
 				B7A74FB71D5297ED00EE9358 /* blueShoot.wav in Resources */,
 				B79510A01BCEC99000750E52 /* GameScene.sks in Resources */,
 				B7A74FB91D5297ED00EE9358 /* laserShoot.wav in Resources */,
+				0461B72B212D68C2000B8302 /* Launch.storyboard in Resources */,
 				B7A74FBB1D5297ED00EE9358 /* nuclearShoot1.wav in Resources */,
-				B79510AC1BCEC99000750E52 /* Launch.storyboard in Resources */,
 				B73CF1881D52B063002C08F4 /* laserShoot1.wav in Resources */,
 				B73B64F91BDBAB8900BB8C53 /* Spark1.sks in Resources */,
 				B7B1EF331DB0220100E40EC3 /* greenBoomb.sks in Resources */,
 				B7A74FBA1D5297ED00EE9358 /* nuclearShoot.wav in Resources */,
 				B75347751D524E7000F3984E /* blueBoomb.sks in Resources */,
 				B79510A91BCEC99000750E52 /* Assets.xcassets in Resources */,
+				0461B72D212D693C000B8302 /* Main.storyboard in Resources */,
 				B75347791D52612D00F3984E /* laserBoomb.sks in Resources */,
-				B79510A71BCEC99000750E52 /* Main.storyboard in Resources */,
 				B71A3E521BDAC774007E3F17 /* MyParticle.sks in Resources */,
 				B7B6FB441D4241880060024D /* nuclearBoomb.sks in Resources */,
 				B7A74FB81D5297ED00EE9358 /* killPlane.wav in Resources */,
@@ -300,22 +314,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B79510A51BCEC99000750E52 /* Main.storyboard */ = {
+		0461B729212D68C2000B8302 /* Launch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B79510A61BCEC99000750E52 /* Base */,
-			);
-			name = Main.storyboard;
-			path = game_dev1;
-			sourceTree = "<group>";
-		};
-		B79510AA1BCEC99000750E52 /* Launch.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B79510AB1BCEC99000750E52 /* Base */,
+				0461B72A212D68C2000B8302 /* Base */,
 			);
 			name = Launch.storyboard;
-			path = game_dev1;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -329,14 +333,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -376,14 +388,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -414,12 +434,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = game_dev1/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resourses/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delfin.find.SpaceShoot;
-				PRODUCT_NAME = "Just Space Shoot";
-				SWIFT_VERSION = 3.0;
+				PRODUCT_NAME = JustSpaceShoot;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -429,12 +450,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = game_dev1/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resourses/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delfin.find.SpaceShoot;
-				PRODUCT_NAME = "Just Space Shoot";
-				SWIFT_VERSION = 3.0;
+				PRODUCT_NAME = JustSpaceShoot;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -442,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B79510951BCEC99000750E52 /* Build configuration list for PBXProject "Just Space Shoot" */ = {
+		B79510951BCEC99000750E52 /* Build configuration list for PBXProject "JustSpaceShoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B79510C41BCEC99000750E52 /* Debug */,
@@ -451,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "Just Space Shoot" */ = {
+		B79510C61BCEC99000750E52 /* Build configuration list for PBXNativeTarget "JustSpaceShoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B79510C71BCEC99000750E52 /* Debug */,

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let attributes = [NSFontAttributeName:UIFont(name: "standard 07_53", size: 19)!]
+        let attributes = [NSAttributedStringKey.font:UIFont(name: "standard 07_53", size: 19)!]
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.5, alpha: 0.0)
         UINavigationBar.appearance().tintColor = UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0)
