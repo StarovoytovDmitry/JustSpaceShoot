@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     // Shut of player
-    func Shuter(){
+    @objc func Shuter(){
         if gameinaction == true {
             let shut: Shot = Shot(image1: imageShoot[number_shut]!)
             shut.Position(player.position)
@@ -122,7 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     // Plane with bomb
-    func Go(){
+    @objc func Go(){
         if gameinaction == true {
             let planeR: Plane = Plane()
             planeR.Position(self)
@@ -140,7 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     // Free all joints
-    func freeJoins() {
+    @objc func freeJoins() {
         if gameinaction == true {
             physics1.freeJoints(self)
         }

@@ -1,0 +1,5 @@
+*.lock
+*.xcuserstate
+JustSpaceShoot.xcodeproj/project.pbxproj
+xcuserdata
+.DS_Store
