@@ -30,91 +30,91 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func leftShut(_ sender: AnyObject) {
-        if (number_shut>0)&&(number_shut<imageShoot.count){
-            number_shut -= 1
-            imageViewShut.image = imageShoot[number_shut]
+        if (GlobalConstants.number_shut>0)&&(GlobalConstants.number_shut<ResoursesConstants.imageShoot.count){
+            GlobalConstants.number_shut -= 1
+            imageViewShut.image = ResoursesConstants.imageShoot[GlobalConstants.number_shut]
         } else {
-            number_shut = imageShoot.count-1
-            imageViewShut.image = imageShoot[number_shut]
+            GlobalConstants.number_shut = ResoursesConstants.imageShoot.count-1
+            imageViewShut.image = ResoursesConstants.imageShoot[GlobalConstants.number_shut]
         }
         selectedReset()
     }
     
     @IBAction func rightShut(_ sender: AnyObject) {
-        if (number_shut>=0)&&(number_shut<imageShoot.count-1){
-            number_shut += 1
-            imageViewShut.image = imageShoot[number_shut]
+        if (GlobalConstants.number_shut>=0)&&(GlobalConstants.number_shut<ResoursesConstants.imageShoot.count-1){
+            GlobalConstants.number_shut += 1
+            imageViewShut.image = ResoursesConstants.imageShoot[GlobalConstants.number_shut]
         } else {
-            number_shut = 0
-            imageViewShut.image = imageShoot[number_shut]
+            GlobalConstants.number_shut = 0
+            imageViewShut.image = ResoursesConstants.imageShoot[GlobalConstants.number_shut]
         }
         selectedReset()
     }
     
     @IBAction func leftImage(_ sender: AnyObject) {
-        if (number_player_image>0)&&(number_player_image<playerArray.count){
-            number_player_image -= 1
-            imageView.image = playerArray[number_player_image]
+        if (GlobalConstants.number_player_image>0)&&(GlobalConstants.number_player_image<ResoursesConstants.playerArray.count){
+            GlobalConstants.number_player_image -= 1
+            imageView.image = ResoursesConstants.playerArray[GlobalConstants.number_player_image]
         } else {
-            number_player_image = playerArray.count-1
-            imageView.image = playerArray[number_player_image]
+            GlobalConstants.number_player_image = ResoursesConstants.playerArray.count-1
+            imageView.image = ResoursesConstants.playerArray[GlobalConstants.number_player_image]
         }
         selectedReset()
     }
     
     @IBAction func rightImage(_ sender: AnyObject) {
-        if (number_player_image>=0)&&(number_player_image<playerArray.count-1){
-            number_player_image += 1
-            imageView.image = playerArray[number_player_image]
+        if (GlobalConstants.number_player_image>=0)&&(GlobalConstants.number_player_image<ResoursesConstants.playerArray.count-1){
+            GlobalConstants.number_player_image += 1
+            imageView.image = ResoursesConstants.playerArray[GlobalConstants.number_player_image]
         } else {
-            number_player_image = 0
-            imageView.image = playerArray[number_player_image]
+            GlobalConstants.number_player_image = 0
+            imageView.image = ResoursesConstants.playerArray[GlobalConstants.number_player_image]
         }
         selectedReset()
     }
     
     override func viewDidLoad() {
-        imageView.image = playerArray[number_player_image]
-        imageViewBackground.backgroundColor = imageArray[number_background]
-        imageViewShut.image = imageShoot[number_shut]
-        imageViewShut.backgroundColor = imageArray[number_background]
+        imageView.image = ResoursesConstants.playerArray[GlobalConstants.number_player_image]
+        imageViewBackground.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
+        imageViewShut.image = ResoursesConstants.imageShoot[GlobalConstants.number_shut]
+        imageViewShut.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
     }
     
     fileprivate func selectedSet() {
-        selected.setTitle(selected_text, for: UIControlState())
-        selected.setTitleColor(UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0), for: UIControlState())
+        selected.setTitle(selected_text, for: UIControl.State())
+        selected.setTitleColor(UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0), for: UIControl.State())
         selectView.backgroundColor = UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0)
         selectShutView.backgroundColor = UIColor(red:0.70, green:0.13, blue:0.13, alpha:1.0)
         
         let defaults = UserDefaults.standard
-        defaults.set(number_shut, forKey: "NumberShutImage")
-        defaults.set(number_background, forKey: "BackGameScene")
-        defaults.set(number_player_image, forKey: "NumberPlayerImage")
+        defaults.set(GlobalConstants.number_shut, forKey: "NumberShutImage")
+        defaults.set(GlobalConstants.number_background, forKey: "BackGameScene")
+        defaults.set(GlobalConstants.number_player_image, forKey: "NumberPlayerImage")
         defaults.synchronize()
     }
     
     fileprivate func selectedReset() {
-        selected.setTitle(select_text, for: UIControlState())
-        selected.setTitleColor(UIColor.white, for: UIControlState())
+        selected.setTitle(select_text, for: UIControl.State())
+        selected.setTitleColor(UIColor.white, for: UIControl.State())
         selectView.backgroundColor = nil
         selectShutView.backgroundColor = nil
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return ResoursesConstants.imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.imageView?.backgroundColor = imageArray[(indexPath as NSIndexPath).row]
+        cell.imageView?.backgroundColor = ResoursesConstants.imageArray[(indexPath as NSIndexPath).row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        number_background=(indexPath as NSIndexPath).row
-        imageViewBackground.backgroundColor = imageArray[number_background]
-        imageViewShut.backgroundColor = imageArray[number_background]
+        GlobalConstants.number_background=(indexPath as NSIndexPath).row
+        imageViewBackground.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
+        imageViewShut.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
         selectedReset()
     }
     

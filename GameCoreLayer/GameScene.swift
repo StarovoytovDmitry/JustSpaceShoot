@@ -25,7 +25,7 @@ struct CMAcceleration {
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //weak var gameViewController: GameViewController? = GameViewController()
-    let player: Player = Player(image1: playerArray[number_player_image]!, player_lives: lives)
+    let player: Player = Player(image1: ResoursesConstants.playerArray[GlobalConstants.number_player_image]!, player_lives: GlobalConstants.lives)
     fileprivate let play_area: PlayArea = PlayArea()
     fileprivate let limiter_area1: Limiter = Limiter()
     fileprivate let limiter_area2: Limiter = Limiter()
@@ -54,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.contactDelegate = self
         
-        gameinaction = true
+        GlobalConstants.gameinaction = true
         
         SceneSetting()
 
@@ -72,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //
         SoundButtonOff()
         //
-        score = 0
+        GlobalConstants.score = 0
         //Tolerance of Timers
         gun.tolerance = 0.06
         spaun.tolerance = 1.0
@@ -114,8 +114,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     // Shut of player
     @objc func Shuter(){
-        if gameinaction == true {
-            let shut: Shot = Shot(image1: imageShoot[number_shut]!)
+        if GlobalConstants.gameinaction == true {
+            let shut: Shot = Shot(image1: ResoursesConstants.imageShoot[GlobalConstants.number_shut]!)
             shut.Position(player.position)
             shut.Action(self, duration: 1.6)
             self.addChild(shut)
@@ -123,7 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     // Plane with bomb
     @objc func Go(){
-        if gameinaction == true {
+        if GlobalConstants.gameinaction == true {
             let planeR: Plane = Plane()
             planeR.Position(self)
             if randomBool() == true {
@@ -131,18 +131,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 boombR.Position(planeR.Position(self))
                 self.addChild(boombR)
                 self.addChild(planeR)
-                physics1.Joint(planeR, bodyB: boombR, scene1: self)
+                PhysicsEffects.shared.Joint(planeR, bodyB: boombR, scene1: self)
                 //boombR.Action()
             } else {
                 self.addChild(planeR)
             }
-            planeR.Action(score)
+            planeR.Action(GlobalConstants.score)
         }
     }
     // Free all joints
     @objc func freeJoins() {
-        if gameinaction == true {
-            physics1.freeJoints(self)
+        if GlobalConstants.gameinaction == true {
+            PhysicsEffects.shared.freeJoints(self)
         }
     }
     
@@ -153,7 +153,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //Несовершенный метод!
     func update_live_score(){
         live_Label.text = ("Lives: \(player.playerlives)")
-        score_Label.text = ("Score: \(score)")
+        score_Label.text = ("Score: \(GlobalConstants.score)")
     }
     
     //Stop timers
@@ -170,16 +170,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endScene(){
-        saveRecord(score)
-        gameinaction = false
+        saveRecord(GlobalConstants.score)
+        GlobalConstants.gameinaction = false
         stopTimers(gun, spaun, free)
         removeAllChildren()
         removeAllActions()
     }
     //Stop Scene
     func stopScene(){
-        saveRecord(score)
-        gameinaction = false
+        saveRecord(GlobalConstants.score)
+        GlobalConstants.gameinaction = false
         stopTimers(gun, spaun, free)
         
         removeAllChildren()
@@ -197,7 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //Pause Scene
     func pauseScene() {
-        gameinaction = false
+        GlobalConstants.gameinaction = false
         //paused = true
         pause.removeFromParent()
         ResumeButtons(true, addRestart: true)
@@ -207,7 +207,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //Run Scene
     func runScene() {
-        gameinaction = true
+        GlobalConstants.gameinaction = true
         addChild(pause)
         //paused = false
         alpha = 1.0
@@ -221,15 +221,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stopTimers(gun, spaun, free)
         removeAllActions()
         removeAllChildren()
-        player.playerlives = lives
-        score = 0
+        player.playerlives = GlobalConstants.lives
+        GlobalConstants.score = 0
         Timers()
         
         addChild(player)
         player.Position(self)
         addChild(play_area)
         Limiters()
-        if soundflag == false {
+        if GlobalConstants.soundflag == false {
             SoundButtonOff()
         } else {
             SoundButtonOn()
@@ -245,10 +245,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //Save new record
     func saveRecord(_ score: Int) {
-        if score >= score_record {
-            score_record = score
+        if score >= GlobalConstants.score_record {
+            GlobalConstants.score_record = score
             let defaults = UserDefaults.standard
-            defaults.set(score_record, forKey: "Record")
+            defaults.set(GlobalConstants.score_record, forKey: "Record")
             defaults.synchronize()
         }
     }
@@ -266,7 +266,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     */
     func SceneSetting() {
         
-        self.backgroundColor = imageArray[number_background]
+        self.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
         ScoreLabel()
         LiveLabel()
         update_live_score()
@@ -333,7 +333,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         soundOn.size = CGSize(width: 100, height: 100)
         soundOn.name = "SoundButtonOn"
         self.addChild(soundOn)
-        soundflag = true
+        GlobalConstants.soundflag = true
     }
     
     func SoundButtonOff() {
@@ -344,7 +344,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         soundOff.size = CGSize(width: 100, height: 100)
         soundOff.name = "SoundButtonOff"
         self.addChild(soundOff)
-        soundflag = false
+        GlobalConstants.soundflag = false
     }
     
     func ResumeButtons(_ addResume: Bool, addRestart: Bool) {
@@ -368,8 +368,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     deinit{
-        saveRecord(score)
-        gameinaction = false
+        saveRecord(GlobalConstants.score)
+        GlobalConstants.gameinaction = false
         stopTimers(gun, spaun, free)
         removeAllActions()
         removeAllChildren()

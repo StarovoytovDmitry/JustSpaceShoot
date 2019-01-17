@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
         
         skView = self.view as! SKView
         skView.ignoresSiblingOrder = true
-        if gameinaction == false {
+        if GlobalConstants.gameinaction == false {
             scene1 = GameScene(fileNamed: "GameScene")!
         }
         scene1!.scaleMode = .fill

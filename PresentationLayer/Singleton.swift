@@ -7,4 +7,3 @@
 //
 
 var scene1: GameScene?// = GameScene()
-let physics1: PhysicsEffects = PhysicsEffects()

@@ -21,18 +21,18 @@ class MenuViewController: UIViewController {
         
         //set settings values
         let defaults = UserDefaults.standard
-        number_background = defaults.integer(forKey: "BackGameScene")
-        number_player_image = defaults.integer(forKey: "NumberPlayerImage")
-        number_shut = defaults.integer(forKey: "NumberShutImage")
-        score_record = defaults.integer(forKey: "Record")
-        recordLabel.text = "Your best : \(score_record)"
+        GlobalConstants.number_background = defaults.integer(forKey: "BackGameScene")
+        GlobalConstants.number_player_image = defaults.integer(forKey: "NumberPlayerImage")
+        GlobalConstants.number_shut = defaults.integer(forKey: "NumberShutImage")
+        GlobalConstants.score_record = defaults.integer(forKey: "Record")
+        recordLabel.text = "Your best : \(GlobalConstants.score_record)"
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.view.backgroundColor = imageArray[number_background]
-        recordLabel.text = "Your best : \(score_record)"
+        self.view.backgroundColor = ResoursesConstants.imageArray[GlobalConstants.number_background]
+        recordLabel.text = "Your best : \(GlobalConstants.score_record)"
         
     }
     

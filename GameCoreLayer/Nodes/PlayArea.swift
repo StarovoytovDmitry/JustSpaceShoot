@@ -20,6 +20,7 @@ class PlayArea: SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
+    @discardableResult
     func Position(_ scene1: SKScene)->CGPoint {
         size = CGSize(width: scene1.size.width, height: scene1.size.height)
         position = CGPoint(x: scene1.size.width/2, y: scene1.size.height/2)

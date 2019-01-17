@@ -37,6 +37,7 @@ class Player: SKSpriteNode {
         return(physicsBody)!
     }
     
+    @discardableResult
     func Position(_ scene1: SKScene)->CGPoint {
         position = CGPoint(x: scene1.size.width/2, y: scene1.size.height/40+30)
         return(position)

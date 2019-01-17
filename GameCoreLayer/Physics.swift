@@ -21,8 +21,10 @@ struct PhysicsCatalog {
 
 class PhysicsEffects: SKSpriteNode  {
 
+    static let shared = PhysicsEffects()
+    
     fileprivate func spaunEffect(_ position: CGPoint, scene: SKScene, time: Double){
-        let effect = SKEmitterNode(fileNamed: effectShoot[number_shut])
+        let effect = SKEmitterNode(fileNamed: ResoursesConstants.effectShoot[GlobalConstants.number_shut])
         effect!.position = position
         scene.addChild(effect!)
         scene.run(SKAction.wait(forDuration: time), completion: { effect!.removeFromParent() })
@@ -46,7 +48,7 @@ class PhysicsEffects: SKSpriteNode  {
         
         spaunEffect(positionEmitter, scene: scene, time: effectDuration)
         
-        if soundflag == true {
+        if GlobalConstants.soundflag == true {
             let action = SKAction.playSoundFileNamed("killPlane.wav", waitForCompletion: false)
             let actionDone = SKAction.removeFromParent()
             scene.run(SKAction.sequence([action, actionDone]))

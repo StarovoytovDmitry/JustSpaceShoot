@@ -33,6 +33,7 @@ class Shot: SKSpriteNode {
         return(physicsBody)!
     }
     
+    @discardableResult
     func Position(_ x1: CGPoint)->CGPoint{
         position = CGPoint(x: x1.x, y: x1.y+100)
         return(position)
@@ -41,8 +42,8 @@ class Shot: SKSpriteNode {
     func Action(_ scene1: SKScene, duration: Double){
         let action = SKAction.moveTo(y: scene1.size.height, duration: duration)
         let actionDone = SKAction.removeFromParent()
-        if soundflag == true {
-            scene1.run(SKAction.playSoundFileNamed(soundShoot[number_shut], waitForCompletion: false))//Сделать как в спаун эффект!!!
+        if GlobalConstants.soundflag == true {
+            scene1.run(SKAction.playSoundFileNamed(ResoursesConstants.soundShoot[GlobalConstants.number_shut], waitForCompletion: false))//Сделать как в спаун эффект!!!
         }
         run(SKAction.sequence([action, actionDone]))
     }

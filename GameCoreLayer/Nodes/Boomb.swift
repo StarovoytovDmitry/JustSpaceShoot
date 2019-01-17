@@ -36,6 +36,7 @@ class Boomb: SKSpriteNode {
         
     }
     
+    @discardableResult
     func Position(_ x: CGPoint)->CGPoint{
         position = x
         return(position)

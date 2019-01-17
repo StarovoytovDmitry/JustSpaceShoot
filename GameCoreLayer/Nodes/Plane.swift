@@ -42,6 +42,7 @@ class Plane: SKSpriteNode {
         return(physicsBody)!
     }
     
+    @discardableResult
     func Position(_ scene1: SKScene)->CGPoint {
         let MinValue = UInt32(0)
         let MaxValue = UInt32(scene1.size.width-100)
